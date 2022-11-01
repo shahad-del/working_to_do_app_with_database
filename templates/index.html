@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bucket list</title>
+</head>
+<body>
+	<form action="/" method="POST" id="formId">
+		<input type="text" minlength="4" maxlength="15" placeholder="Add" name ="item" id="item">
+		<input type="hidden"  value = "" id="to_edit" name="to_edit">
+		<input type="hidden"  value = "" id="to_delete" name="to_delete">
+
+		<button type="submit" id ="btn">submit</button>
+	</form>
+	<ul>
+		{% for item in list_of_items %}
+		<li>{{item[1]}}</li>
+		<button onclick="edit('{{item[1]}}')">edit</button>
+		<button onclick="to_delete('{{item[1]}}')">delete</button>
+		{% endfor %}
+	</ul>
+	<script type="text/javascript">
+		function edit(task){
+			document.getElementById('item').value = task;
+			document.getElementById('to_edit').value = task;
+		}
+		function to_delete(to_delete_task){
+			document.getElementById('to_delete').value = to_delete_task;
+			document.getElementById("formId").submit();
+		}
+	</script>
+</body>
+</html>
