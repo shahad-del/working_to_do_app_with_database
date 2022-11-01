@@ -1,4 +1,4 @@
-list comprehension has been used.
-mysql connector,connecting to database,querying from it.
-managing files neately.
-add,edit,delete button using javascript.
+List comprehension has been used.
+Mysql connector,connecting to database,querying from it.
+Managing files neatly.
+Add,edit,delete button using javascript.
